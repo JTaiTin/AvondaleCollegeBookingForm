@@ -1,0 +1,60 @@
+﻿@page
+@model Software_Assesment.Pages.Bookings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Booking.Id" />
+            <div class="form-group">
+                <label asp-for="Booking.LastName" class="control-label"></label>
+                <input asp-for="Booking.LastName" class="form-control" />
+                <span asp-validation-for="Booking.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.FirstName" class="control-label"></label>
+                <input asp-for="Booking.FirstName" class="form-control" />
+                <span asp-validation-for="Booking.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Venue" class="control-label"></label>
+                <input asp-for="Booking.Venue" class="form-control" />
+                <span asp-validation-for="Booking.Venue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.SessionTime" class="control-label"></label>
+                <input asp-for="Booking.SessionTime" class="form-control" />
+                <span asp-validation-for="Booking.SessionTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.SessionLength" class="control-label"></label>
+                <input asp-for="Booking.SessionLength" class="form-control" />
+                <span asp-validation-for="Booking.SessionLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Description" class="control-label"></label>
+                <input asp-for="Booking.Description" class="form-control" />
+                <span asp-validation-for="Booking.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

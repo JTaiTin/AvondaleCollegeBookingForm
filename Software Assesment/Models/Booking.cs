@@ -9,7 +9,7 @@ namespace Software_Assesment.Models
     {
         public int Id { get; set; }
         public string LastName { get; set; }
-        public string FirtstName { get; set; }
+        public string FirstName { get; set; }
         public string Venue { get; set; }
         public DateTime SessionTime { get; set; }
         public int SessionLength { get; set; }
