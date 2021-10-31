@@ -36,7 +36,9 @@ namespace Software_Assesment.Pages.Bookings
                 return Page();
             }
 
-            _context.Booking.Add(Booking);
+
+
+                _context.Booking.Add(Booking);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
