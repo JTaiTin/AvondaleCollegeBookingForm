@@ -25,9 +25,17 @@
                 <span asp-validation-for="Booking.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Booking.Venue" class="control-label"></label>
-                <input asp-for="Booking.Venue" class="form-control" />
+                <label asp-for="Booking.Venue" class="control-label">Venue</label>
+                <select asp-for="Booking.Venue" class="form-control"
+                        asp-items="Html.GetEnumSelectList<Software_Assesment.Models.Venue>()">
+                    <option value="">Select Venue</option>
+                </select>
                 <span asp-validation-for="Booking.Venue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.SessionDate" class="control-label"></label>
+                <input asp-for="Booking.SessionDate" class="form-control" />
+                <span asp-validation-for="Booking.SessionDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.SessionTime" class="control-label"></label>

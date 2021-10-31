@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Software_Assesment.Data;
 
 namespace Software_Assesment.Migrations
 {
     [DbContext(typeof(AvcolContext))]
-    partial class AvcolContextModelSnapshot : ModelSnapshot
+    [Migration("20211031202118_VenueEnum")]
+    partial class VenueEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,9 +36,6 @@ namespace Software_Assesment.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("SessionDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("SessionLength")
                         .HasColumnType("int");
