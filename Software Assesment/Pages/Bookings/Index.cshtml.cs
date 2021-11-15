@@ -23,7 +23,7 @@ namespace Software_Assesment.Pages.Bookings
 
         public async Task OnGetAsync()
         {
-            Booking = await _context.Booking.ToListAsync();
+            Booking = await _context.Bookings.ToListAsync();
         }
     }
 }

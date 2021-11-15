@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Software_Assesment.Data;
 
 namespace Software_Assesment.Migrations
 {
     [DbContext(typeof(AvcolContext))]
-    partial class AvcolContextModelSnapshot : ModelSnapshot
+    [Migration("20211115213019_AddedContactInfo")]
+    partial class AddedContactInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -30,7 +30,7 @@ namespace Software_Assesment.Pages.Bookings
                 return NotFound();
             }
 
-            Booking = await _context.Booking.FirstOrDefaultAsync(m => m.Id == id);
+            Booking = await _context.Bookings.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Booking == null)
             {
@@ -71,7 +71,7 @@ namespace Software_Assesment.Pages.Bookings
 
         private bool BookingExists(int id)
         {
-            return _context.Booking.Any(e => e.Id == id);
+            return _context.Bookings.Any(e => e.Id == id);
         }
     }
 }

@@ -15,9 +15,12 @@ namespace Software_Assesment.Models
     public class Booking
     {
         public int Id { get; set; }
-
+        [Required]
+        [StringLength(maximumLength:50, ErrorMessage = "Name cannot exceed 50 characters")]
         [Display(Name="Last Name")]
         public string LastName { get; set; }
+        [Required]
+        [StringLength(maximumLength:50, ErrorMessage = "Name cannot exceed 50 characters")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Session Date")]
@@ -27,8 +30,12 @@ namespace Software_Assesment.Models
         [DataType(DataType.Time)]
         public DateTime SessionTime { get; set; }
         [Display(Name = "Session Length(hours)")]
+        [Range(1, 8)]
         public int SessionLength { get; set; }
         public string Description { get; set; }
         public Venue Venue { get; set; }
+        [Required]
+        [Phone]
+        public string ContactNumber { get; set; }
     }
 }

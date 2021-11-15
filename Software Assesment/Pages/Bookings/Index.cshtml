@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Bookings</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -20,9 +20,6 @@
                 @Html.DisplayNameFor(model => model.Booking[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].Venue)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Booking[0].SessionDate)
             </th>
             <th>
@@ -33,6 +30,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Venue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].ContactNumber)
             </th>
             <th></th>
         </tr>
@@ -47,9 +50,6 @@
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Venue)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.SessionDate)
             </td>
             <td>
@@ -60,6 +60,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Venue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
