@@ -14,13 +14,18 @@ namespace Software_Assesment.Models
 
     public class Booking
     {
+
+        public Booking()
+        {
+            
+        }
         public int Id { get; set; }
         [Required]
-        [StringLength(maximumLength:50, ErrorMessage = "Name cannot exceed 50 characters")]
+        [StringLength(maximumLength:50, ErrorMessage = "Last Name cannot exceed 50 characters")]
         [Display(Name="Last Name")]
         public string LastName { get; set; }
         [Required]
-        [StringLength(maximumLength:50, ErrorMessage = "Name cannot exceed 50 characters")]
+        [StringLength(maximumLength:50, ErrorMessage = "First Name cannot exceed 50 characters")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Session Date")]
