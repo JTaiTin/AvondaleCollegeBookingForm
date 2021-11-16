@@ -22,7 +22,9 @@
                 @Html.DisplayNameFor(model => model.Bookings[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bookings[0].SessionDate)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Bookings[0].SessionDate)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings[0].SessionTime)

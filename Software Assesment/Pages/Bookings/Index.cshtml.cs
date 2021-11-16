@@ -19,12 +19,14 @@ namespace Software_Assesment.Pages.Bookings
         }
 
         public string NameSort { get; set; }
-
+        public string DateSort { get; set; }
+        
         public IList<Booking> Bookings { get;set; }
 
         public async Task OnGetAsync(string sortOrder)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
 
             IQueryable<Booking> BookingsIQ = from s in _context.Bookings
                                              select s;
@@ -33,6 +35,12 @@ namespace Software_Assesment.Pages.Bookings
             {
                 case "name_desc":
                     BookingsIQ = BookingsIQ.OrderByDescending(s => s.LastName);
+                    break;
+                case "Date":
+                    BookingsIQ = BookingsIQ.OrderBy(s => s.SessionDate);
+                    break;
+                case "date_desc":
+                    BookingsIQ = BookingsIQ.OrderByDescending(s => s.SessionDate);
                     break;
                 default:
                     BookingsIQ = BookingsIQ.OrderBy(s => s.LastName);
