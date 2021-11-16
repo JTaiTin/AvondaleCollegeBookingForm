@@ -13,17 +13,33 @@ namespace Software_Assesment.Pages.Bookings
     public class IndexModel : PageModel
     {
         private readonly Software_Assesment.Data.AvcolContext _context;
-
         public IndexModel(Software_Assesment.Data.AvcolContext context)
         {
             _context = context;
         }
 
+        public string NameSort { get; set; }
+
         public IList<Booking> Bookings { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            Bookings = await _context.Bookings.ToListAsync();
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+            IQueryable<Booking> BookingsIQ = from s in _context.Bookings
+                                             select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    BookingsIQ = BookingsIQ.OrderByDescending(s => s.LastName);
+                    break;
+                default:
+                    BookingsIQ = BookingsIQ.OrderBy(s => s.LastName);
+                    break;
+            }
+
+            Bookings = await BookingsIQ.AsNoTracking().ToListAsync();
         }
     }
 }
