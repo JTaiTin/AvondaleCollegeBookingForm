@@ -2,7 +2,7 @@
 @model Software_Assesment.Pages.Bookings.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "";
 }
 
 <h1>Bookings</h1>
@@ -14,7 +14,9 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Bookings[0].LastName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Bookings[0].LastName)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings[0].FirstName)
