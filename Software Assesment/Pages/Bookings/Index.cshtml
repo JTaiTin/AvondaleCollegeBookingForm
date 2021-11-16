@@ -14,34 +14,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].LastName)
+                @Html.DisplayNameFor(model => model.Bookings[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].FirstName)
+                @Html.DisplayNameFor(model => model.Bookings[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].SessionDate)
+                @Html.DisplayNameFor(model => model.Bookings[0].SessionDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].SessionTime)
+                @Html.DisplayNameFor(model => model.Bookings[0].SessionTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].SessionLength)
+                @Html.DisplayNameFor(model => model.Bookings[0].SessionLength)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].Description)
+                @Html.DisplayNameFor(model => model.Bookings[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].Venue)
+                @Html.DisplayNameFor(model => model.Bookings[0].Venue)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].ContactNumber)
+                @Html.DisplayNameFor(model => model.Bookings[0].ContactNumber)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Booking) {
+@foreach (var item in Model.Bookings) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)

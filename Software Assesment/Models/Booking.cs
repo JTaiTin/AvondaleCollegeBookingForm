@@ -41,6 +41,7 @@ namespace Software_Assesment.Models
         public Venue Venue { get; set; }
         [Required]
         [Phone]
+        [Display(Name = "Contact Number")]
         public string ContactNumber { get; set; }
     }
 }

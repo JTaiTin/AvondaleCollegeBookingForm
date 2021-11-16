@@ -19,11 +19,11 @@ namespace Software_Assesment.Pages.Bookings
             _context = context;
         }
 
-        public IList<Booking> Booking { get;set; }
+        public IList<Booking> Bookings { get;set; }
 
         public async Task OnGetAsync()
         {
-            Booking = await _context.Bookings.ToListAsync();
+            Bookings = await _context.Bookings.ToListAsync();
         }
     }
 }
