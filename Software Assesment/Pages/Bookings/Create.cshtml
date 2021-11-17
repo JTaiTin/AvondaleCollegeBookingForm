@@ -43,6 +43,7 @@
                 <input asp-for="Booking.Description" class="form-control" />
                 <span asp-validation-for="Booking.Description" class="text-danger"></span>
             </div>
+            @*drop down list filled by venue enum in booking model page*@
             <div class="form-group">
                 <label asp-for="Booking.Venue" class="control-label"></label>
                 <select asp-for="Booking.Venue" class="form-control" 

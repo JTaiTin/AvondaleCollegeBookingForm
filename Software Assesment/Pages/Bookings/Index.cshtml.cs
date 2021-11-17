@@ -33,7 +33,7 @@ namespace Software_Assesment.Pages.Bookings
 
             IQueryable<Booking> BookingsIQ = from s in _context.Bookings
                                              select s;
-
+            //sorting and search filter
             if (!string.IsNullOrEmpty(SearchString))
             {
                 BookingsIQ = BookingsIQ.Where(s => s.LastName.Contains(SearchString) || s.FirstName.Contains(SearchString));
