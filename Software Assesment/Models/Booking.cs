@@ -20,7 +20,7 @@ namespace Software_Assesment.Models
             
         }
         public int Id { get; set; }
-
+        //will only accept values less than 50
         [Required]
         [StringLength(maximumLength:50, ErrorMessage = "Last Name cannot exceed 50 characters")]
         [Display(Name="Last Name")]
@@ -40,15 +40,17 @@ namespace Software_Assesment.Models
         [Display(Name = "Session Time")]
         [DataType(DataType.Time)]
         public DateTime SessionTime { get; set; }
-
+        //will only accept numbers from 1 - 8
         [Required]
         [Display(Name = "Session Length(hours)")]
         [Range(1, 8)]
         public int SessionLength { get; set; }
 
         public string Description { get; set; }
-        public Venue Venue { get; set; }
 
+        [Required]
+        public Venue Venue { get; set; }
+        //will only accept input that matches phone number format
         [Required]
         [Phone]
         [Display(Name = "Contact Number")]

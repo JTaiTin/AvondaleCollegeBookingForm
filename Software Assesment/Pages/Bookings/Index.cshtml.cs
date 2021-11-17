@@ -26,6 +26,7 @@ namespace Software_Assesment.Pages.Bookings
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
+        //sorting and search filter
         public async Task OnGetAsync(string sortOrder, string SearchString)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -33,12 +34,12 @@ namespace Software_Assesment.Pages.Bookings
 
             IQueryable<Booking> BookingsIQ = from s in _context.Bookings
                                              select s;
-            //sorting and search filter
+            //search filter
             if (!string.IsNullOrEmpty(SearchString))
             {
                 BookingsIQ = BookingsIQ.Where(s => s.LastName.Contains(SearchString) || s.FirstName.Contains(SearchString));
             }
-
+            //sorting filter
             switch (sortOrder)
             {
                 case "name_desc":
