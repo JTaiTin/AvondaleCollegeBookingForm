@@ -22,12 +22,12 @@ namespace Software_Assesment.Models
         public int Id { get; set; }
         //will only accept values less than 50
         [Required]
-        [StringLength(maximumLength:50, ErrorMessage = "Last Name cannot exceed 50 characters")]
+        [StringLength(50)]
         [Display(Name="Last Name")]
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(maximumLength:50, ErrorMessage = "First Name cannot exceed 50 characters")]
+        [StringLength(50)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

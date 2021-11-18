@@ -45,10 +45,9 @@
             </div>
             @*drop down list filled by venue enum in booking model page*@
             <div class="form-group">
-                <label asp-for="Booking.Venue" class="control-label"></label>
+                <label asp-for="Booking.Venue" class="control-label">Select a Venue</label>
                 <select asp-for="Booking.Venue" class="form-control" 
                         asp-items="Html.GetEnumSelectList<Software_Assesment.Models.Venue>()" required>
-                    <option value="" disabled>Select Venue</option>
                 </select>
             </div>
             <div class="form-group">
